@@ -1,0 +1,27 @@
+
+
+.LoginPage {
+    width : 100%;
+    height : 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.LoginPanel {
+    width : 20vw;
+    height : 45vh;
+    border: 2px solid white;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.LoginPanel > input {
+    width : 10vw;
+}
+.Panel {
+    display: flex;
+    flex-direction: row;
+}

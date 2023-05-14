@@ -1,0 +1,31 @@
+<svg class="svgback" width = "100" height = "100" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            #seg {
+                stroke-dasharray: 7 2;
+                animation-name: myanimation;
+                animation-timing-function: linear;
+                animation-direction: normal;
+                animation-duration: 22s;
+                animation-iteration-count: infinite;
+                
+            }
+
+            @keyframes myanimation{
+                0% {
+                    stroke-dashoffset: 0;
+                }
+                100% {
+                    stroke-dashoffset: 100;
+                }
+            }
+
+        </style>
+        <path id = "seg" d = "M0 0 L100 100 L100 0 L0 100 ZM0 100 L 100 100M0 0 L100 0" stroke="rgba(67,161,243,0.47)" fill = "transparent"/>
+    </defs>
+    <pattern id="outline" x = "0" y = "0" width="1" height= "1">
+        <use href = "#seg"/>
+    </pattern>
+
+    <rect fill = "url(#outline)" width = "100%" height = "100%"/>
+</svg>

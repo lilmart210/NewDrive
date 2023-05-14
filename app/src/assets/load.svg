@@ -1,0 +1,33 @@
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+    <path d='M 0 50 q 50 -70 100 0' stroke='blue' fill='transparent' stroke-width='1'/>
+    <path d='M 0 50 q 50 70 100 0' stroke='blue' fill='transparent' stroke-width='1'/>
+    <path id= "sec" d='M .5 50.5 q 50.9 -69.5 100.5 .5' stroke='red' fill='transparent' stroke-width='1'/>
+    <path id="third" d='M .5 50.5 q 50.9 69.5 100.5 .5' stroke='red' fill='transparent' stroke-width='.5'/>
+    <style>
+        path {
+            stroke-dasharray: 90;
+            animation-name: mymove;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+        }
+        #sec,#third {
+            stroke-dasharray: 70;
+            animation-name: mymove;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: reverse;
+            animation-delay: 1000ms;
+        }
+
+        @keyframes mymove {
+            0% {
+                stroke-dashoffset: 0;
+            }
+
+            50% {
+                stroke-dashoffset : 200;
+            }
+        }
+    </style>
+</svg>

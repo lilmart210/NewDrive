@@ -1,0 +1,99 @@
+
+
+
+.Debug {
+  border: 1px solid red;
+}
+
+
+.HomeLayout {
+  width : 100%;
+  height : 100%;
+  margin : 0;
+
+  display: flex;
+  flex-direction: row;
+  height : 100%;
+  width : 100%;
+  background-image: url('../../assets/RootBackground.svg');
+  background-color: black;
+}
+
+
+
+.HomeLayout > *:not(:first-child) {
+  margin-top: 6vh;
+}
+
+.ScreenHeader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right : 0;
+  bottom : 0;
+  margin : 0;
+  padding : 0;
+  /*why ? calc(100vw - 2px)*/
+  max-width: 100vw;
+  height : 6vh;
+  display: flex;
+  align-items: center;
+
+  justify-content: space-around;
+  border-bottom: 1px solid grey;
+  
+}
+.ScreenHeader .SearchBar{
+  width : 50%;
+}
+
+.FileDirectory {
+  flex-grow: 1;
+}
+
+
+
+.LeftSearch{
+  margin-top:0;
+  padding : 0;
+  display: flex;
+  min-width: 15vw;
+  max-height : 94vh;
+  flex-direction: column;
+  border-right: 1px solid grey;
+}
+
+.LeftDirectory {
+  border-bottom: 2px solid white;
+}
+
+
+
+.Widget { 
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  
+  
+}
+.Widget button {
+  background-color: transparent;
+  width: 100%;
+
+}
+.Widget button:hover { 
+  border-color: black;
+  background-color: darkslategray;
+}
+.Widget button:active {
+  border-color: grey;
+}
+
+
+.Auth {
+  display: flex;
+  width : 100%;
+  height : 100%;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,15 @@
+<svg height="100" width="100" ="http://www.w3.org/2000/svg">
+    
+    <rect x="0.5" y="0.5" width="99" height="99" stroke="white" rx="3"fill="none"/>
+    <circle r="10" cx="50" cy="50" fill="yellow" fill-opacity=".6" stroke="white" />
+
+    <path d="M40 95 l10 -20 l 10 +20 z" fill="none" stroke="white"/>
+    <path d="M40 95 l10 -20 l 10 +20 z" transform="rotate(59,50,70)" fill="none" stroke="white"/>
+    <path d="M40 95 l10 -20 l 10 +20 z" transform="rotate(-59,50,70)" fill="none" stroke="white"/>
+
+
+    <path d="M40 5 l10 20 l 10 -20 z" fill="none" stroke="white"/>
+    <path d="M40 5 l10 20 l 10 -20 z" transform="rotate(50,50,30)" fill="none" stroke="white"/>
+    <path d="M40 5 l10 20 l 10 -20 z" transform="rotate(-55,50,30)" fill="none" stroke="white"/>
+    
+</svg>

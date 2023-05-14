@@ -1,0 +1,580 @@
+
+
+
+/**
+
+Globals
+
+**/
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body{
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+#root {
+  width : 100vw;
+  height : 100vh;
+  margin : 0;
+  padding : 0;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.DarkTheme {
+  --main-color : black;
+  --divider-color : white;
+  color : white;
+
+}
+
+.LightTheme {
+  --main-color : rgb(147, 126, 126);
+  --divider-color : black;
+  color : black;
+}
+
+/**
+End of Globals
+*/
+
+
+
+
+/** Login Page **/
+.LoginPage {
+    width : 100%;
+    height : 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.LoginPanel {
+    width : max(300px,20vw);
+    height : max(450px,45vh);
+    border: 2px solid white;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.LoginPanel > * {
+  width : 80%;
+}
+.LoginPanel > h1 {
+  justify-content: center;
+  text-align: center;
+}
+
+.Panel {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.Panel > * {
+  width : 100%;
+}
+
+/** Home Page **/
+
+
+
+.Debug {
+    border: 1px solid red;
+}
+
+.HomeLayout {
+  width : 100%;
+  height : 100%;
+  margin : 0;
+
+  display: flex;
+  flex-direction: row;
+  height : 100%;
+  width : 100%;
+  background-image: url('./RootBackground.svg');
+  background-color: var(--main-color);
+}
+
+.HomeLayout > *:not(:first-child) {
+  margin-top: 6vh;
+}
+
+.ScreenHeader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right : 0;
+  bottom : 0;
+  margin : 0;
+  padding : 0;
+  /*why ? calc(100vw - 2px)*/
+  max-width: 100vw;
+  height : 6vh;
+  display: flex;
+  align-items: center;
+
+  justify-content: space-around;
+  border-bottom: 1px solid grey;
+  
+}
+.ScreenHeader .SearchBar{
+  width : 50%;
+}
+
+.FileDirectory {
+  flex-grow: 1;
+}
+
+.FileContent {
+  display: flex;
+  flex-direction: column;
+  max-width : 60px;
+  padding-left: 1px;
+  padding-right: 1px;
+  border-left: 1px solid var(--divider-color);
+  border-right: 1px solid var(--divider-color);
+}
+
+.FileContentPanel {
+  display: flex;
+  flex-direction: column;
+}
+
+.Tab { 
+  display: flex;
+}
+
+.Invisible {
+  display: none;
+}
+
+
+.Enlarge {
+  width: 400px;
+}
+.Shrink {
+  display: none;
+}
+
+.LeftArrow { 
+  background-color: transparent;
+
+  background-image: url('./LeftArrow.svg');
+  background-size: contain;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.RightArrow { 
+  background-color: transparent;
+  background-image : url('./RightArrow.svg');
+  background-size: contain;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+/*Icons*/
+.Plus {
+  background-image: url('./plusIcon.svg');
+  height : 30px;
+  width : 100%;
+  background-size: contain;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.Logo {
+  background-image: url('./mydriveIcon.svg');
+  max-height: 80px;
+  height : 80px;
+  width : 160px;
+  background-size: contain;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+
+  text-align: left;
+  padding-top: 25px;
+}
+
+.Profile {
+  background-image: url('./userIcon.svg');
+  background-size: contain;
+  background-position: 50% 50%;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-color: transparent;
+
+  align-items: left;
+  justify-content: left;
+  padding-left: 0;
+  width : 85px;
+}
+
+.LeftSearch{
+  margin-top:0;
+  padding : 0;
+  display: flex;
+  min-width: 15vw;
+  max-height : 94vh;
+  flex-direction: column;
+  border-right: 1px solid var(--divider-color);
+}
+
+.LeftDirectory {
+  border-bottom: 2px solid var(--divider-color);
+}
+
+
+
+.Widget { 
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  
+  
+}
+.Widget button {
+  background-color: transparent;
+  width: 100%;
+
+}
+.Widget button:hover { 
+  border-color: black;
+  background-color: darkslategray;
+}
+.Widget button:active {
+  border-color: grey;
+}
+
+
+.Auth {
+  display: flex;
+  width : 100%;
+  height : 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+/** Browser Page **/
+
+
+
+
+.UploadContainer {
+    width : 100%;
+    height : 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.UploadPanel {
+    width : 80%;
+    height : 80%;
+    border: 2px solid white;;
+    border-radius: 6px;
+
+}
+
+.ImageContainer img {
+    width : 20px;
+    height : 20px;
+}
+
+.FileExplorer {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left : 15vw;
+    top : 6vh;
+    width : 85vw;
+    height : 94vh;
+    background-color: rgba(35, 77, 81, 0.848);
+    border-radius: 30px;
+    border: 2px solid white;
+    padding : 10px;
+    gap : 5px;
+
+}
+
+.FileExplorer .Menu { 
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    width : 100%;
+    flex-direction: column;
+    gap : auto;
+}
+.FileExplorer .Menu button {
+    max-width: fit-content;
+}
+
+.FileExplorer .FileList {
+    height : auto;
+    flex-grow: 1;
+    border : 2px solid black;
+    width : 30vw;
+    background-color: rgb(42, 38, 38);
+    border-radius: 10px;
+}
+.FileExplorer .FileList button { 
+    width : 100%;
+    height : 10px;
+    text-justify: top;
+}
+
+/*File Browser | The image explorer */
+
+.BrowserContainer {
+  width : 100%;
+  height : 100%;
+  display: flex;
+  justify-content: top;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Header {
+  height : 5vh;
+  width : 100%;
+}
+
+.FileContainer {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width : 100%;
+}
+
+.FileContainer > button {
+  flex-grow: 100%;
+  width : 100%;
+  height : 10px;
+  text-align:end;
+  vertical-align: start;
+}
+
+
+.Item:hover{
+  border : 2px solid white;
+}
+
+
+
+.Directory {
+  display: flex;
+  height : 40px;
+  
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+
+.Directory::before{
+  content: "Folder :\00a0 ";
+}
+
+.FileDisplay { 
+  display: flex;
+  width : 100%;
+  height : min-content;
+  gap : 10px;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.DisplayContent {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width : 100vw;
+  height : 100vh;
+  top : 0;
+  left : 0;
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.433);
+  object-fit: contain;
+}
+
+.DisplayContent:has(.Item) > .Item{
+  width : 50vw;
+  height : 50vh;
+  object-fit: contain;
+}
+
+
+
+.DisplayImage {
+  object-fit: contain;
+  width: 300px;
+  height: 600px;
+}
+
+.MediaContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap : 10px;
+}
+.MediaContainer label {
+  margin-top : 10px;
+  width : 100%;
+  background-color: gray;
+}
+
+.Media {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.Play {
+  width : 200px;
+  height : 200px;
+  background-image: url('./play.svg');
+  background-size: cover;
+}
+
+.Item,.File video,img,audio {
+  object-fit: contain;
+}
+
+.Item,.File {
+  object-fit: contain;
+}
+.File{
+  width : 200px;
+  height : 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.File > video,img,audio,object { 
+  max-width: 100%;
+  max-height : 100%;
+}
+.File:has(label){
+  word-wrap: break-word;
+}
+
+.Expand {
+  width : none;
+  height : none;
+  overflow: hidden;
+  background-color: none;
+}
+.Expand > video,img,audio,object {
+  max-width: 100%;
+  max-height : 100%;
+}
+
+.NoHover:hover{
+  border: none;
+}
+
+.stack > video {
+  opacity : .6;
+}
+.stack{
+  background-image: url('./play.svg');
+  background-size: cover;
+}
+
+.Mygrid {
+  text-align: center center;
+  display: flex;
+  height : min-content;
+  flex-direction: column;
+}
+
+.Mygrid > div{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.Mygrid input {
+  height : 1rem;
+}
+
+.bigger {
+  height : 80%;
+}
+
+/** Side Panel **/
+
+.DrivePanel {
+  width : 100%;
+  height : 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
