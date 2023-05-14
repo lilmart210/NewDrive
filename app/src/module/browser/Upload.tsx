@@ -31,6 +31,11 @@ export function Upload(props : {drive : {[name : string] : any}}){
         })
 
     }
+
+    function clear(){
+        SetFiles([]);
+    }
+
     const FileChange = (event : React.ChangeEvent<HTMLInputElement>)=>{
         const afilelist = event.target.files
         console.log("input ",afilelist);
@@ -60,7 +65,10 @@ export function Upload(props : {drive : {[name : string] : any}}){
     return <div className='UploadContainer'>
         <div className='UploadPanel'>
             <input type='file' onChange={FileChange} multiple></input>
-            <button onClick={()=>{setPopup(true)}}>Upload</button>
+            <div className='UploadBox'>
+                <button onClick={()=>{setPopup(true)}}>Upload</button>
+                <button onClick={clear}>clear</button>
+            </div>
             <div className = "FileDisplay">{...ToObject(Files)}</div>
             
             {popup ? <FileExplorer drive = {props.drive} onSubmit = {UploadHandler} onExit = {()=>{setPopup(false)}}></FileExplorer> : null}

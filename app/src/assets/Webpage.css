@@ -330,12 +330,14 @@ End of Globals
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 
 .UploadPanel {
-    width : 80%;
-    height : 80%;
+    width : 90%;
+    height : 100%;
+    overflow: hidden;
     border: 2px solid white;;
     border-radius: 6px;
 
@@ -405,12 +407,17 @@ End of Globals
 }
 
 .FileContainer {
-  overflow-y: scroll;
+  overflow-y: hidden;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   width : 100%;
+}
+
+.UploadBox { 
+  display: flex;
+  flex-direction: row;
 }
 
 .FileContainer > button {
@@ -443,10 +450,11 @@ End of Globals
 .FileDisplay { 
   display: flex;
   width : 100%;
-  height : min-content;
+  height : 80vh;
   gap : 10px;
-  flex-wrap: wrap;
+  
   flex-direction: column;
+  overflow-y : scroll ;
 }
 
 .DisplayContent {
